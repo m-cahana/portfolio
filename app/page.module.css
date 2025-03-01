@@ -302,3 +302,18 @@ a.secondary {
     opacity: 1;
   }
 }
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 0; /* Remove left margin to align with date */
+  margin-top: 8px;
+}
+
+.skillTag {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0; /* Remove padding */
+  font-family: Helvetica;
+}

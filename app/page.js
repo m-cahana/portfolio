@@ -8,19 +8,21 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Deny and Demolish: Israel's Permitting Regime in the West Bank",
+      title: "Deny and Demolish: Israel's Permitting System in the West Bank",
       description:
-        "An interactive investigation into Israel's discriminatory permitting system in the West Bank, which is being leveraged to expand Israeli settlements and demolish Palestinian homes.",
+        "An interactive investigation into permitting in the West Bank, where Israeli settlements expand freely while Palestinian communities face systematic demolition.",
       path: "/west-bank-demolitions",
       date: "February 2025",
+      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
       image: "/west_bank_demolitions.jpeg",
     },
     {
       title: "Drivers Are Speeding Through New York City's School Zones",
       description:
-        "An interactive story on drivers who speed through New York City's school zones hundreds of times a year without getting taken off the road.",
+        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
       date: "January 2025",
+      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
       image: "/nyc_camera_violations.jpeg",
     },
   ];
@@ -60,6 +62,13 @@ export default function Home() {
                 <a href={project.path} className={styles.projectDescription}>
                   {project.description}
                 </a>
+                <div className={styles.skillsList}>
+                  {project.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className={styles.skillTag}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
                 {hoveredProject === index && (
                   <div className={styles.projectImage}>
                     <img src={project.image} alt={project.title} />
