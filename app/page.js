@@ -36,7 +36,7 @@ export default function Home() {
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
             I&apos;m an aspiring data journalist and web designer, with a
             background in economic research and data science. I make interactive
-            graphics to tell stories I consider important and underlooked.
+            graphics to tell stories I consider important and overlooked.
             I&apos;m open to collaboration and freelance work, and you can reach
             me at cahanamichael@gmail.com.
           </p>

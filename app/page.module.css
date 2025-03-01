@@ -25,7 +25,7 @@
   width: 100%;
   max-width: 800px;
   gap: 32px;
-  margin-top: 80px;
+  margin-top: 20px;
   position: relative;
   z-index: 1;
 }
@@ -206,21 +206,28 @@ a.secondary {
 }
 
 .projectHeader {
-  display: flex;
-  gap: 24px;
-  align-items: baseline;
+  display: block;
 }
 
 .projectDate {
   font-style: italic;
   color: rgba(0, 0, 0, 0.6);
-  min-width: 120px;
+  display: inline;
 }
 
 .projectTitle {
   font-size: 18px;
-  font-style: italic;
   font-weight: 500;
+  display: inline;
+  margin-left: 24px;
+}
+
+@media (max-width: 768px) {
+  .projectTitle {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
 }
 
 .projectDescription {
