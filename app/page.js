@@ -34,8 +34,9 @@ export default function Home() {
           <h1 className={`${styles.title} ${styles.fadeIn}`}>Michael Cahana</h1>
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
             I&apos;m an aspiring data journalist and web designer, with a
-            background in research and data science. I make interactive graphics
-            to tell stories I consider important and underlooked. You can reach
+            background in economic research and data science. I make interactive
+            graphics to tell stories I consider important and underlooked.
+            I&apos;m open to collaboration and freelance work, and you can reach
             me at cahanamichael@gmail.com.
           </p>
         </div>
