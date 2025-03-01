@@ -10,7 +10,7 @@ export default function Home() {
     {
       title: "Deny and Demolish: Israel's Permitting Regime in the West Bank",
       description:
-        "An interactive investigation into Israel&apos;s discriminatory permitting system in the West Bank, which is being leveraged to expand Israeli settlements and demolish Palestinian homes.",
+        "An interactive investigation into Israel's discriminatory permitting system in the West Bank, which is being leveraged to expand Israeli settlements and demolish Palestinian homes.",
       path: "/west-bank-demolitions",
       date: "February 2025",
       image: "/west_bank_demolitions.jpeg",
@@ -18,7 +18,7 @@ export default function Home() {
     {
       title: "Drivers Are Speeding Through New York City's School Zones",
       description:
-        "An interactive story on drivers who speed through New York City&apos;s school zones hundreds of times a year without getting taken off the road.",
+        "An interactive story on drivers who speed through New York City's school zones hundreds of times a year without getting taken off the road.",
       path: "/nyc-violations",
       date: "January 2025",
       image: "/nyc_camera_violations.jpeg",
