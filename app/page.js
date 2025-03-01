@@ -14,7 +14,6 @@ export default function Home() {
       path: "/west-bank-demolitions",
       date: "February 2025",
       image: "/west_bank_demolitions.jpeg",
-      url: "https://m-cahana.github.io/west_bank_demolitions/",
     },
     {
       title: "Drivers Are Speeding Through New York City's School Zones",
@@ -23,7 +22,6 @@ export default function Home() {
       path: "/nyc-violations",
       date: "January 2025",
       image: "/nyc_camera_violations.jpeg",
-      url: "https://m-cahana.github.io/nyc_camera_violations/",
     },
   ];
 
@@ -55,21 +53,11 @@ export default function Home() {
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
-                <a
-                  href={project.url}
-                  className={styles.projectHeader}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.path} className={styles.projectHeader}>
                   <em className={styles.projectDate}>{project.date}</em>
                   <span className={styles.projectTitle}>{project.title}</span>
                 </a>
-                <a
-                  href={project.url}
-                  className={styles.projectDescription}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.path} className={styles.projectDescription}>
                   {project.description}
                 </a>
                 {hoveredProject === index && (
