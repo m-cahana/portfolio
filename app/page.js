@@ -8,8 +8,7 @@ export default function Home() {
 
   const projects = [
     {
-      title:
-        "Deny and Demolish: Israel&apos;s Permitting Regime in the West Bank",
+      title: "Deny and Demolish: Israel's Permitting Regime in the West Bank",
       description:
         "An interactive investigation into Israel&apos;s discriminatory permitting system in the West Bank, which is being leveraged to expand Israeli settlements and demolish Palestinian homes.",
       path: "/west-bank-demolitions",
@@ -17,7 +16,7 @@ export default function Home() {
       image: "/west_bank_demolitions.jpeg",
     },
     {
-      title: "Drivers Are Speeding Through New York City&apos;s School Zones",
+      title: "Drivers Are Speeding Through New York City's School Zones",
       description:
         "An interactive story on drivers who speed through New York City&apos;s school zones hundreds of times a year without getting taken off the road.",
       path: "/nyc-violations",
@@ -32,10 +31,10 @@ export default function Home() {
         <div className={styles.container}>
           <h1 className={`${styles.title} ${styles.fadeIn}`}>Michael Cahana</h1>
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
-            I'm an aspiring data journalist and web designer, with a background
-            in research and data science. I make interactive graphics to tell
-            stories that feel important and underlooked. You can reach me at
-            cahanamichael@gmail.com.
+            I&apos;m an aspiring data journalist and web designer, with a
+            background in research and data science. I make interactive graphics
+            to tell stories I consider important and underlooked. You can reach
+            me at cahanamichael@gmail.com.
           </p>
         </div>
 
