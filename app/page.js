@@ -8,7 +8,8 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Deny and Demolish: Israel's Permitting Regime in the West Bank",
+      title:
+        "Deny and Demolish: Israel&apos;s Permitting Regime in the West Bank",
       description:
         "An interactive investigation into Israel&apos;s discriminatory permitting system in the West Bank, which is being leveraged to expand Israeli settlements and demolish Palestinian homes.",
       path: "/west-bank-demolitions",
@@ -16,7 +17,7 @@ export default function Home() {
       image: "/west_bank_demolitions.jpeg",
     },
     {
-      title: "Drivers Are Speeding Through New York City's School Zones",
+      title: "Drivers Are Speeding Through New York City&apos;s School Zones",
       description:
         "An interactive story on drivers who speed through New York City&apos;s school zones hundreds of times a year without getting taken off the road.",
       path: "/nyc-violations",
