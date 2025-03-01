@@ -19,7 +19,7 @@ export default function Home() {
       title: "Drivers Are Speeding Through New York City's School Zones",
       description:
         "An interactive story on drivers who speed through New York City's school zones hundreds of times a year without getting taken off the road.",
-      path: "/nyc-violations",
+      path: "/nyc-camera-violations",
       date: "January 2025",
       image: "/nyc_camera_violations.jpeg",
     },
