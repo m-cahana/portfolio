@@ -17,7 +17,8 @@ export default function Home() {
       image: "/west_bank_demolitions.jpeg",
     },
     {
-      title: "Drivers Are Speeding Through New York City's School Zones",
+      title:
+        "Drivers Are Speeding Through New York City's School Zones Without Restraint",
       description:
         "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
