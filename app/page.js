@@ -19,7 +19,7 @@ export default function Home() {
     },
     {
       title:
-        "Drivers Are Speeding Through New York City's School Zones Without Restraint",
+        "Drivers Speed Through New York City's School Zones With No Limits",
       description:
         "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
