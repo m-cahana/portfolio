@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import { useState } from "react";
+import * as Portal from "@radix-ui/react-portal";
 
 export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -38,7 +39,9 @@ export default function Home() {
             background in economic research and data science. I make interactive
             graphics to tell stories that feel important and overlooked.
             I&apos;m open to collaboration and freelance work, and you can reach
-            me at cahanamichael@gmail.com.
+            me at{" "}
+            <a href="mailto:cahanamichael@gmail.com">cahanamichael@gmail.com</a>
+            .
           </p>
         </div>
 
@@ -72,9 +75,11 @@ export default function Home() {
                   ))}
                 </div>
                 {hoveredProject === index && (
-                  <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
-                  </div>
+                  <Portal.Root>
+                    <div className={styles.projectImage}>
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                  </Portal.Root>
                 )}
               </div>
             ))}

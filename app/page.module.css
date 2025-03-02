@@ -17,6 +17,7 @@
   font-family: var(--font-geist-sans);
   position: relative;
   z-index: 1;
+  isolation: isolate;
 }
 
 .main {
@@ -261,12 +262,14 @@ a.secondary {
   display: flex;
   align-items: center;
   justify-content: center;
+  isolation: isolate;
 }
 
 .projectImage img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 @keyframes fadeIn {
