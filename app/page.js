@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 import * as Portal from "@radix-ui/react-portal";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -85,6 +86,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <Analytics />
       </main>
     </div>
   );
