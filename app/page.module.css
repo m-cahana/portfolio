@@ -48,20 +48,6 @@
   line-height: 1.6;
 }
 
-.projectsContainer {
-  text-align: left;
-  position: relative;
-  z-index: 1;
-}
-
-.projectsTitle {
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  font-style: italic;
-}
-
 .main ol {
   font-family: Helvetica;
   padding-left: 0;
@@ -192,40 +178,6 @@ a.secondary {
   }
 }
 
-.projectsList {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  position: relative;
-  z-index: 1;
-}
-
-.projectItem {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: relative;
-  z-index: 1;
-}
-
-.projectHeader {
-  display: block;
-}
-
-.projectDate {
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.6);
-  display: inline;
-}
-
-.projectTitle {
-  font-size: 18px;
-  font-weight: 500;
-  display: inline;
-  margin-left: 24px;
-  font-style: italic;
-}
-
 a.email {
   font-weight: 550;
 }
@@ -319,17 +271,21 @@ a.email {
   }
 }
 
-.skillsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-left: 0; /* Remove left margin to align with date */
-  margin-top: 8px;
+/* Tab styles */
+.MuiTab-root {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  font-family: var(--font-geist-sans) !important;
+  padding: 0 32px 0 0 !important;
+  min-width: auto !important;
+  color: rgba(0, 0, 0, 1) !important;
+  font-style: italic !important;
 }
 
-.skillTag {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-  padding: 0; /* Remove padding */
-  font-family: Helvetica;
+.MuiTabs-indicator {
+  display: none !important;
 }
+
+/* ... rest of your existing styles ... */

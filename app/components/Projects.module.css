@@ -1,0 +1,147 @@
+.projectsContainer {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.projectsTitle {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.projectHeader {
+  display: block;
+}
+
+.projectDate {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  display: inline;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: 500;
+  display: inline;
+  margin-left: 24px;
+  font-style: italic;
+}
+
+.projectDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  margin-left: 0; /* Removed margin to align with date */
+}
+
+.projectHeader:hover .projectTitle {
+  text-decoration: underline;
+}
+
+.projectImage {
+  position: fixed;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 2000;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  border: 1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.delay1 {
+  animation-delay: 0.4s;
+}
+
+.delay2 {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keep project image animation separate */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 0; /* Remove left margin to align with date */
+  margin-top: 8px;
+}
+
+.skillTag {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0; /* Remove padding */
+  font-family: Helvetica;
+}
+
+.noUnderline {
+  text-decoration: none !important;
+}

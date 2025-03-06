@@ -2,33 +2,28 @@
 
 import styles from "./page.module.css";
 import { useState } from "react";
-import * as Portal from "@radix-ui/react-portal";
-import { Analytics } from "@vercel/analytics/react";
+import { Tabs, Tab, Box } from "@mui/material";
+import Projects from "./components/Projects";
+import Work from "./components/Work";
+import Education from "./components/Education";
+
+function TabPanel({ children, value, index }) {
+  return (
+    <div hidden={value !== index} role="tabpanel">
+      {value === index && children}
+    </div>
+  );
+}
 
 export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [tabValue, setTabValue] = useState(0);
+  const [shouldAnimateProjects, setShouldAnimateProjects] = useState(true);
 
-  const projects = [
-    {
-      title: "Deny and Demolish: Israel's Permitting System in the West Bank",
-      description:
-        "An interactive investigation into permitting in the West Bank, where Israeli settlements expand freely while Palestinian communities face systematic demolition.",
-      path: "/west-bank-demolitions",
-      date: "February 2025",
-      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
-      image: "/west_bank_demolitions.jpeg",
-    },
-    {
-      title:
-        "Drivers Speed Through New York City's School Zones With No Limits",
-      description:
-        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
-      path: "/nyc-camera-violations",
-      date: "January 2025",
-      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
-      image: "/nyc_camera_violations.jpeg",
-    },
-  ];
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+    setShouldAnimateProjects(false);
+  };
 
   return (
     <div className={styles.page}>
@@ -36,11 +31,10 @@ export default function Home() {
         <div className={styles.container}>
           <h1 className={`${styles.title} ${styles.fadeIn}`}>Michael Cahana</h1>
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
-            I&apos;m an aspiring data journalist and web designer, with a
-            background in economic research and data science. I make interactive
-            graphics to tell stories that feel important and overlooked.
-            I&apos;m open to collaboration and freelance work, and you can reach
-            me at{" "}
+            I&apos;m a data scientist and aspiring data journalist and web
+            designer. I make interactive graphics to tell stories that feel
+            important and overlooked. I&apos;m open to freelance work, and you
+            can reach me at{" "}
             <a className={styles.email} href="mailto:cahanamichael@gmail.com">
               cahanamichael@gmail.com
             </a>
@@ -48,50 +42,62 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={styles.projectsContainer}>
-          <h2
-            className={`${styles.projectsTitle} ${styles.fadeIn} ${styles.delay2}`}
-          >
-            Projects
-          </h2>
-          <div className={styles.projectsList}>
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`${styles.projectItem} ${styles.fadeIn}`}
-                style={{ animationDelay: `${(index + 4) * 0.4}s` }}
-              >
-                <a
-                  href={project.path}
-                  className={styles.projectHeader}
-                  onMouseEnter={() => setHoveredProject(index)}
-                  onMouseLeave={() => setHoveredProject(null)}
-                >
-                  <em className={styles.projectDate}>{project.date}</em>
-                  <span className={styles.projectTitle}>{project.title}</span>
-                </a>
-                <a href={project.path} className={styles.projectDescription}>
-                  {project.description}
-                </a>
-                <div className={styles.skillsList}>
-                  {project.skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className={styles.skillTag}>
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                {hoveredProject === index && (
-                  <Portal.Root>
-                    <div className={styles.projectImage}>
-                      <img src={project.image} alt={project.title} />
-                    </div>
-                  </Portal.Root>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-        <Analytics />
+        <Box sx={{ width: "100%" }}>
+          <Box sx={{ borderBottom: 0 }}>
+            <Tabs
+              value={tabValue}
+              onChange={handleTabChange}
+              aria-label="portfolio sections"
+              className={`${styles.fadeIn} ${styles.delay2}`}
+              sx={{
+                "& .MuiTab-root": {
+                  fontSize: "24px",
+                  fontWeight: 400,
+                  letterSpacing: "-0.02em",
+                  textTransform: "none",
+                  fontFamily: "var(--font-geist-sans)",
+                  padding: "0 32px 0 0",
+                  minWidth: "auto",
+                  color: "rgba(0, 0, 0, 0.4)",
+                  fontStyle: "italic",
+                  "&.Mui-selected": {
+                    color: "rgba(0, 0, 0, 1)",
+                    backgroundColor: "transparent",
+                  },
+                  "&:hover": {
+                    color: "rgba(0, 0, 0, 1)",
+                    backgroundColor: "transparent",
+                  },
+                  "&:focus": {
+                    color: "rgba(0, 0, 0, 1)",
+                    backgroundColor: "transparent",
+                  },
+                },
+                "& .MuiTabs-indicator": {
+                  display: "none",
+                },
+              }}
+            >
+              <Tab label="Projects" disableRipple />
+              <Tab label="Work" disableRipple />
+              <Tab label="Education" disableRipple />
+            </Tabs>
+          </Box>
+
+          <TabPanel value={tabValue} index={0}>
+            <Projects
+              hoveredProject={hoveredProject}
+              setHoveredProject={setHoveredProject}
+              shouldAnimate={shouldAnimateProjects}
+            />
+          </TabPanel>
+          <TabPanel value={tabValue} index={1}>
+            <Work shouldAnimate={shouldAnimateProjects} />
+          </TabPanel>
+          <TabPanel value={tabValue} index={2}>
+            <Education shouldAnimate={shouldAnimateProjects} />
+          </TabPanel>
+        </Box>
       </main>
     </div>
   );
