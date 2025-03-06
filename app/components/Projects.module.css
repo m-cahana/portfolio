@@ -34,7 +34,7 @@
 
 .projectDate {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   display: inline;
 }
 
@@ -137,11 +137,19 @@
 
 .skillTag {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   padding: 0; /* Remove padding */
   font-family: Helvetica;
 }
 
 .noUnderline {
   text-decoration: none !important;
+}
+
+.thesisLink {
+  font-style: italic;
+}
+
+.thesisLink:hover {
+  text-decoration: underline;
 }

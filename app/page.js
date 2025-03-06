@@ -31,7 +31,7 @@ export default function Home() {
         <div className={styles.container}>
           <h1 className={`${styles.title} ${styles.fadeIn}`}>Michael Cahana</h1>
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
-            I&apos;m a data scientist and aspiring data journalist and web
+            I&apos;m a data scientist, and aspiring data journalist and web
             designer. I make interactive graphics to tell stories that feel
             important and overlooked. I&apos;m open to freelance work, and you
             can reach me at{" "}

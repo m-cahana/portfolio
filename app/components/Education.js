@@ -15,10 +15,14 @@ export default function Education(props) {
           B.A. with Honors in Economics, Minors in Computer Science and
           Environmental Policy
           <br />
-          <em>
+          <a
+            href="https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-23.pdf"
+            className={styles.thesisLink}
+          >
             Thesis: The Distributional Impacts of Real-Time Pricing in the
-            Spanish Residential Electricity Market
-          </em>
+            Spanish Residential Electricity Market (subsequently developed into
+            a working paper)
+          </a>
         </>
       ),
       date: "Graduated June 2018",
@@ -44,7 +48,9 @@ export default function Education(props) {
                 {school.school}
               </span>
             </div>
-            <a className={styles.projectDescription}>{school.description}</a>
+            <div className={styles.projectDescription}>
+              {school.description}
+            </div>
           </div>
         ))}
       </div>

@@ -26,7 +26,7 @@ export default function Work(props) {
       role: "Research Analyst",
       organization: "University of Chicago Energy & Environment Lab",
       description:
-        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test a new approach to enforcing air quality standards in California. Built a supervised machine learning model to predict emissions leaks at oil and gas wells in Colorado, and better target the state's regulatory inspectors.",
+        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test a new approach to enforcing air quality standards in California. Built a supervised machine learning model to predict emissions leaks at oil and gas wells in Colorado, and better target the state's inspectors towards emitting wells.",
       date: "March 2019 - June 2021",
     },
     {
@@ -40,7 +40,7 @@ export default function Work(props) {
       role: "Research Assistant",
       organization: "Northwestern University Dept. of Economics",
       description:
-        "Researched real-time electricity pricing and renewable energy policies in Spain, using large-scale data to determine whether new policies had uneven distributional impacts on Spanish residential households.",
+        "Researched real-time electricity pricing and renewable energy policies in Spain, using large-scale data analysis to determine whether new policies had uneven distributional impacts on Spanish residential households.",
       date: "June 2017 - June 2018",
     },
   ];
