@@ -226,6 +226,10 @@ a.secondary {
   font-style: italic;
 }
 
+a.email {
+  font-weight: 550;
+}
+
 @media (max-width: 768px) {
   .projectTitle {
     display: block;
@@ -241,8 +245,7 @@ a.secondary {
   margin-left: 0; /* Removed margin to align with date */
 }
 
-.projectHeader:hover .projectTitle,
-.projectDescription:hover {
+.projectHeader:hover .projectTitle {
   text-decoration: underline;
 }
 

@@ -41,7 +41,9 @@ export default function Home() {
             graphics to tell stories that feel important and overlooked.
             I&apos;m open to collaboration and freelance work, and you can reach
             me at{" "}
-            <a href="mailto:cahanamichael@gmail.com">cahanamichael@gmail.com</a>
+            <a className={styles.email} href="mailto:cahanamichael@gmail.com">
+              cahanamichael@gmail.com
+            </a>
             .
           </p>
         </div>
@@ -58,10 +60,13 @@ export default function Home() {
                 key={index}
                 className={`${styles.projectItem} ${styles.fadeIn}`}
                 style={{ animationDelay: `${(index + 4) * 0.4}s` }}
-                onMouseEnter={() => setHoveredProject(index)}
-                onMouseLeave={() => setHoveredProject(null)}
               >
-                <a href={project.path} className={styles.projectHeader}>
+                <a
+                  href={project.path}
+                  className={styles.projectHeader}
+                  onMouseEnter={() => setHoveredProject(index)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
                   <em className={styles.projectDate}>{project.date}</em>
                   <span className={styles.projectTitle}>{project.title}</span>
                 </a>
