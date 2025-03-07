@@ -35,12 +35,26 @@
   text-align: left;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  height: 30px;
+}
+
 .title {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  margin-bottom: 24px;
   font-style: italic;
+  display: inline;
+  padding: 0 4px;
+  border-radius: 4px;
+  line-height: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInFromLeft 0.8s ease-out forwards;
 }
 
 .text {
@@ -179,7 +193,7 @@ a.secondary {
 }
 
 a.email {
-  font-weight: 550;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -242,6 +256,10 @@ a.email {
   animation: slideInFromLeft 0.8s ease-out forwards;
 }
 
+.delaySwitcher {
+  animation-delay: 0.3s;
+}
+
 .delay1 {
   animation-delay: 0.4s;
 }
@@ -287,5 +305,3 @@ a.email {
 .MuiTabs-indicator {
   display: none !important;
 }
-
-/* ... rest of your existing styles ... */

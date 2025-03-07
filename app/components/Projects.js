@@ -4,9 +4,18 @@ import { useState } from "react";
 import styles from "./Projects.module.css";
 import * as Portal from "@radix-ui/react-portal";
 
-export default function Projects(props) {
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const { shouldAnimate } = props;
+export default function Projects({
+  hoveredProject,
+  setHoveredProject,
+  shouldAnimate,
+  currentTheme,
+}) {
+  let colorIndex = 0; // Start at 0
+  const getNextIndex = () => {
+    const current = colorIndex;
+    colorIndex = (colorIndex + 1) % 6; // Increment and wrap around at 6
+    return current;
+  };
 
   const projects = [
     {
@@ -29,7 +38,6 @@ export default function Projects(props) {
       image: "/nyc_camera_violations.jpeg",
     },
   ];
-
   return (
     <div className={styles.projectsContainer}>
       <div className={styles.projectsList}>
@@ -40,7 +48,7 @@ export default function Projects(props) {
               shouldAnimate ? styles.fadeIn : ""
             }`}
             style={
-              shouldAnimate ? { animationDelay: `${(index + 4) * 0.4}s` } : {}
+              shouldAnimate ? { animationDelay: `${(index + 4) * 0.3}s` } : {}
             }
           >
             <a
@@ -49,15 +57,41 @@ export default function Projects(props) {
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <em className={styles.projectDate}>{project.date}</em>
-              <span className={styles.projectTitle}>{project.title}</span>
+              <em
+                className={styles.projectDate}
+                style={
+                  currentTheme[0] === "#FFFFFF"
+                    ? {}
+                    : { color: currentTheme[getNextIndex()] }
+                }
+              >
+                {project.date}
+              </em>
+              <span
+                className={styles.projectTitle}
+                style={
+                  currentTheme[0] === "#FFFFFF"
+                    ? {}
+                    : { color: currentTheme[getNextIndex()] }
+                }
+              >
+                {project.title}
+              </span>
             </a>
             <a href={project.path} className={styles.projectDescription}>
               {project.description}
             </a>
             <div className={styles.skillsList}>
               {project.skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className={styles.skillTag}>
+                <span
+                  key={skillIndex}
+                  className={styles.skillTag}
+                  style={
+                    currentTheme[0] === "#FFFFFF"
+                      ? {}
+                      : { color: currentTheme[getNextIndex()] }
+                  }
+                >
                   {skill}
                 </span>
               ))}
