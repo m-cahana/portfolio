@@ -18,6 +18,10 @@
   transform: scale(1.1);
 }
 
+.active {
+  transform: scale(1.1);
+}
+
 .colorPreview {
   display: flex;
   gap: 2px;

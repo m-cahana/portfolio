@@ -62,7 +62,10 @@ export default function Home() {
               Michael Cahana
             </h1>
             <div className={`${styles.fadeIn} ${styles.delaySwitcher}`}>
-              <ThemeSwitcher onThemeChange={handleThemeChange} />
+              <ThemeSwitcher
+                onThemeChange={handleThemeChange}
+                currentTheme={currentTheme}
+              />
             </div>
           </div>
           <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>

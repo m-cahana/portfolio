@@ -26,13 +26,15 @@ export const themes = [
   },
 ];
 
-export default function ThemeSwitcher({ onThemeChange }) {
+export default function ThemeSwitcher({ onThemeChange, currentTheme }) {
   return (
     <div className={styles.themeSwitcher}>
       {themes.map((theme) => (
         <button
           key={theme.id}
-          className={styles.themeButton}
+          className={`${styles.themeButton} ${
+            theme.colors[0] === currentTheme[0] ? styles.active : ""
+          }`}
           onClick={() => onThemeChange(theme.colors)}
           aria-label={`Switch to ${theme.id}`}
         >
