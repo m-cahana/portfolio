@@ -153,8 +153,7 @@ export default function Home() {
                 label="Projects"
                 disableRipple
                 sx={{
-                  color:
-                    currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[4],
+                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[4],
                   "&.Mui-selected": {
                     fontWeight: 600,
                     color:
@@ -167,8 +166,7 @@ export default function Home() {
                 label="Work"
                 disableRipple
                 sx={{
-                  color:
-                    currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[5],
+                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[5],
                   "&.Mui-selected": {
                     fontWeight: 600,
                     color:
@@ -181,8 +179,7 @@ export default function Home() {
                 label="Education"
                 disableRipple
                 sx={{
-                  color:
-                    currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[1],
+                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[1],
                   "&.Mui-selected": {
                     fontWeight: 600,
                     color:
