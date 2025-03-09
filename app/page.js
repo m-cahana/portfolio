@@ -33,9 +33,13 @@ export default function Home() {
   const [tabValue, setTabValue] = useState(0);
   const [shouldAnimateProjects, setShouldAnimateProjects] = useState(true);
   const [currentTheme, setCurrentTheme] = useState(() => {
-    const hour = new Date().getHours();
-    const isDaytime = hour >= 6 && hour < 20; // Consider 6 AM to 8 PM as daytime
-    return isDaytime ? themes[0].colors : themes[themes.length - 1].colors;
+    // Only run this check in the browser
+    if (typeof window !== "undefined") {
+      const hour = new Date().getHours();
+      const isDaytime = hour >= 6 && hour < 20;
+      return isDaytime ? themes[0].colors : themes[themes.length - 1].colors;
+    }
+    return themes[0].colors; // Default to light theme if not in browser
   });
 
   const handleTabChange = (event, newValue) => {
@@ -44,7 +48,10 @@ export default function Home() {
   };
 
   const handleThemeChange = (colors) => {
-    setCurrentTheme(colors);
+    if (typeof window !== "undefined") {
+      // Add this check
+      setCurrentTheme(colors);
+    }
   };
 
   const backgroundOpacity = 1;
