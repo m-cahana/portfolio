@@ -6,11 +6,15 @@ export const themes = [
   // from figma's color palettes
   {
     id: "white",
-    colors: ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"],
+    colors: ["#FFFFFF", "#8F8F8F", "#8F8F8F", "#8F8F8F", "#8F8F8F", "#8F8F8F"],
+  },
+  {
+    id: "dijon mustard",
+    colors: ["#FFDE21", "#F2AD2F", "#FFD32C", "#E0BC00", "#FFB302", "#F5C935"],
   },
   {
     id: "sage",
-    colors: ["#94B444", "#A8BB6E", "#DDDBDA", "#DBC1A0", "#839546", "#BBBAB9"],
+    colors: ["#94B444", "#A8BB6E", "#B5B2B0", "#DBC1A0", "#839546", "#BBBAB9"],
   },
   {
     id: "maraschino",
@@ -21,12 +25,16 @@ export const themes = [
     colors: ["#0705F6", "#110792", "#FCB4D4", "#B079C2", "#0705F6", "#110792"],
   },
   {
-    id: "dijon mustard",
-    colors: ["#FFDE21", "#FFEA99", "#FFD32C", "#E0BC00", "#FFB302", "#F5C935"],
+    id: "dark mode",
+    colors: ["#1E1E1E", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5"],
   },
 ];
 
-export default function ThemeSwitcher({ onThemeChange, currentTheme }) {
+export default function ThemeSwitcher({
+  onThemeChange,
+  currentTheme,
+  isDarkMode,
+}) {
   return (
     <div className={styles.themeSwitcher}>
       {themes.map((theme) => (
@@ -43,7 +51,7 @@ export default function ThemeSwitcher({ onThemeChange, currentTheme }) {
               className={styles.colorSwatch}
               style={{
                 backgroundColor: theme.colors[0],
-                border: "1px solid black",
+                border: isDarkMode ? "1px solid white" : "1px solid black",
               }}
             />
           </div>

@@ -3,20 +3,21 @@
 import { useState } from "react";
 import styles from "./Projects.module.css";
 import * as Portal from "@radix-ui/react-portal";
+import { getColorIndexer } from "../utils/colorIndexer";
 
-export default function Work({ shouldAnimate, currentTheme }) {
-  let colorIndex = 0; // Start at 0
-  const getNextIndex = () => {
-    const current = colorIndex;
-    colorIndex = (colorIndex + 1) % 6; // Increment and wrap around at 6
-    return current;
-  };
+export default function Work({
+  shouldAnimate,
+  currentTheme,
+  isDarkMode,
+  isLightMode,
+}) {
+  const getNextIndex = getColorIndexer(isDarkMode, isLightMode);
   const jobs = [
     {
       role: "Sabbatical of sorts",
       organization: "",
       description:
-        "Running an afterschool program for preschoolers, working at a restaurant, teaching myself how to make interactive graphics, and building out visual projects.",
+        "Running an afterschool program for preschoolers, working at a restaurant, teaching myself how to make interactive graphics, and building visual projects.",
       date: "September 2024 - Present",
       skills: [
         "HTML",
@@ -32,7 +33,7 @@ export default function Work({ shouldAnimate, currentTheme }) {
       role: "Data Scientist",
       organization: "Quora",
       description:
-        "Managed experimentation and research for multiple monetization workstreams. Oversaw experiments that increased company revenue by 10%. Set pricing for our new chat product, developed a revenue sharing system for content creators, and analyzed subscriber behavior to improve retention.",
+        "Managed experimentation and research for multiple monetization workstreams, increasing revenue for the core Quora product, and developing a subscription system for Poe, the company's new chat product.",
       date: "November 2021 - September 2024",
       skills: [
         "Python",
@@ -50,7 +51,7 @@ export default function Work({ shouldAnimate, currentTheme }) {
       role: "Research Analyst",
       organization: "University of Chicago Energy & Environment Lab",
       description:
-        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test a new approach to enforcing air quality standards in California. Built a model to predict emissions leaks at oil and gas wells in Colorado, and better target the state's inspectors towards emitting wells.",
+        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test novel enforcement of air quality standards in California, and built a model to predict emissions leaks at oil and gas wells in Colorado, better targeting the state's inspectors towards emitting wells.",
       date: "March 2019 - June 2021",
       skills: [
         "R",
@@ -113,9 +114,13 @@ export default function Work({ shouldAnimate, currentTheme }) {
               <em
                 className={styles.projectDate}
                 style={
-                  currentTheme[0] === "#FFFFFF"
+                  isLightMode
                     ? {}
-                    : { color: currentTheme[getNextIndex()] }
+                    : {
+                        color: isDarkMode
+                          ? currentTheme[1]
+                          : currentTheme[getNextIndex()],
+                      }
                 }
               >
                 {job.date}
@@ -123,10 +128,12 @@ export default function Work({ shouldAnimate, currentTheme }) {
               <span
                 className={`${styles.projectTitle} ${styles.noUnderline}`}
                 style={
-                  currentTheme[0] === "#FFFFFF"
+                  isLightMode
                     ? {}
                     : {
-                        color: currentTheme[getNextIndex()],
+                        color: isDarkMode
+                          ? "#FFFFFF"
+                          : currentTheme[getNextIndex()],
                       }
                 }
               >
@@ -134,17 +141,22 @@ export default function Work({ shouldAnimate, currentTheme }) {
                 {job.organization && `, ${job.organization}`}
               </span>
             </div>
-            <a className={styles.projectDescription}>{job.description}</a>
+            <a
+              className={styles.projectDescription}
+              style={{
+                color: isDarkMode ? "#F5F5F5" : "inherit",
+              }}
+            >
+              {job.description}
+            </a>
             <div className={styles.skillsList}>
               {job.skills.map((skill, skillIndex) => (
                 <span
                   key={skillIndex}
                   className={styles.skillTag}
-                  style={
-                    currentTheme[0] === "#FFFFFF"
-                      ? {}
-                      : { color: currentTheme[getNextIndex()] }
-                  }
+                  style={{
+                    color: currentTheme[getNextIndex()],
+                  }}
                 >
                   {skill}
                 </span>

@@ -3,19 +3,17 @@
 import { useState } from "react";
 import styles from "./Projects.module.css";
 import * as Portal from "@radix-ui/react-portal";
+import { getColorIndexer } from "../utils/colorIndexer";
 
 export default function Projects({
   hoveredProject,
   setHoveredProject,
   shouldAnimate,
   currentTheme,
+  isDarkMode,
+  isLightMode,
 }) {
-  let colorIndex = 0; // Start at 0
-  const getNextIndex = () => {
-    const current = colorIndex;
-    colorIndex = (colorIndex + 1) % 6; // Increment and wrap around at 6
-    return current;
-  };
+  const getNextIndex = getColorIndexer(isDarkMode, isLightMode);
 
   const projects = [
     {
@@ -60,9 +58,13 @@ export default function Projects({
               <em
                 className={styles.projectDate}
                 style={
-                  currentTheme[0] === "#FFFFFF"
+                  isLightMode
                     ? {}
-                    : { color: currentTheme[getNextIndex()] }
+                    : {
+                        color: isDarkMode
+                          ? currentTheme[1]
+                          : currentTheme[getNextIndex()],
+                      }
                 }
               >
                 {project.date}
@@ -70,15 +72,25 @@ export default function Projects({
               <span
                 className={styles.projectTitle}
                 style={
-                  currentTheme[0] === "#FFFFFF"
+                  isLightMode
                     ? {}
-                    : { color: currentTheme[getNextIndex()] }
+                    : {
+                        color: isDarkMode
+                          ? "#FFFFFF"
+                          : currentTheme[getNextIndex()],
+                      }
                 }
               >
                 {project.title}
               </span>
             </a>
-            <a href={project.path} className={styles.projectDescription}>
+            <a
+              href={project.path}
+              className={styles.projectDescription}
+              style={{
+                color: isDarkMode ? "#F5F5F5" : "inherit",
+              }}
+            >
               {project.description}
             </a>
             <div className={styles.skillsList}>
@@ -86,11 +98,9 @@ export default function Projects({
                 <span
                   key={skillIndex}
                   className={styles.skillTag}
-                  style={
-                    currentTheme[0] === "#FFFFFF"
-                      ? {}
-                      : { color: currentTheme[getNextIndex()] }
-                  }
+                  style={{
+                    color: currentTheme[getNextIndex()],
+                  }}
                 >
                   {skill}
                 </span>

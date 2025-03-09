@@ -32,7 +32,11 @@ export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [tabValue, setTabValue] = useState(0);
   const [shouldAnimateProjects, setShouldAnimateProjects] = useState(true);
-  const [currentTheme, setCurrentTheme] = useState(themes[0].colors); // Use first theme from the array
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const hour = new Date().getHours();
+    const isDaytime = hour >= 6 && hour < 20; // Consider 6 AM to 8 PM as daytime
+    return isDaytime ? themes[0].colors : themes[themes.length - 1].colors;
+  });
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -45,38 +49,54 @@ export default function Home() {
 
   const backgroundOpacity = 1;
 
+  const isDarkMode = currentTheme[0] === "#1E1E1E";
+  const isLightMode = currentTheme[0] === "#FFFFFF";
+
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.page}
+      style={{
+        backgroundColor: isDarkMode ? currentTheme[0] : "inherit",
+      }}
+    >
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.titleContainer}>
             <h1
               className={`${styles.title} ${styles.fadeIn}`}
               style={{
-                color:
-                  currentTheme[0] === "#FFFFFF"
-                    ? "black"
-                    : addOpacity(currentTheme[0], backgroundOpacity),
+                color: isDarkMode
+                  ? "#FFFFFF"
+                  : currentTheme[0] === "#FFFFFF"
+                  ? "black"
+                  : addOpacity(currentTheme[0], backgroundOpacity),
               }}
             >
               Michael Cahana
             </h1>
-            <div className={`${styles.fadeIn} ${styles.delaySwitcher}`}>
+            <div className={`${styles.fadeIn} ${styles.delay1}`}>
               <ThemeSwitcher
                 onThemeChange={handleThemeChange}
                 currentTheme={currentTheme}
+                isDarkMode={isDarkMode}
               />
             </div>
           </div>
-          <p className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}>
+          <p
+            className={`${styles.text} ${styles.fadeIn} ${styles.delay1}`}
+            style={{
+              color: isDarkMode ? "#F5F5F5" : "inherit",
+            }}
+          >
             I&apos;m a{" "}
             <span
               style={{
                 fontWeight: 500,
-                color:
-                  currentTheme[0] === "#FFFFFF"
-                    ? "black"
-                    : addOpacity(currentTheme[0], backgroundOpacity),
+                color: isDarkMode
+                  ? "#F5F5F5"
+                  : currentTheme[0] === "#FFFFFF"
+                  ? "black"
+                  : addOpacity(currentTheme[0], backgroundOpacity),
               }}
             >
               data scientist
@@ -85,10 +105,11 @@ export default function Home() {
             <span
               style={{
                 fontWeight: 500,
-                color:
-                  currentTheme[0] === "#FFFFFF"
-                    ? "black"
-                    : addOpacity(currentTheme[1], backgroundOpacity),
+                color: isDarkMode
+                  ? "#F5F5F5"
+                  : currentTheme[0] === "#FFFFFF"
+                  ? "black"
+                  : addOpacity(currentTheme[1], backgroundOpacity),
               }}
             >
               aspiring data journalist
@@ -97,10 +118,11 @@ export default function Home() {
             <span
               style={{
                 fontWeight: 500,
-                color:
-                  currentTheme[0] === "#FFFFFF"
-                    ? "black"
-                    : addOpacity(currentTheme[2], backgroundOpacity),
+                color: isDarkMode
+                  ? "#F5F5F5"
+                  : currentTheme[0] === "#FFFFFF"
+                  ? "black"
+                  : addOpacity(currentTheme[2], backgroundOpacity),
               }}
             >
               web designer
@@ -112,10 +134,11 @@ export default function Home() {
               className={styles.email}
               style={{
                 fontWeight: 500,
-                color:
-                  currentTheme[0] === "#FFFFFF"
-                    ? "black"
-                    : addOpacity(currentTheme[3], backgroundOpacity),
+                color: isDarkMode
+                  ? "#F5F5F5"
+                  : currentTheme[0] === "#FFFFFF"
+                  ? "black"
+                  : addOpacity(currentTheme[3], backgroundOpacity),
               }}
               href="mailto:cahanamichael@gmail.com"
             >
@@ -153,11 +176,18 @@ export default function Home() {
                 label="Projects"
                 disableRipple
                 sx={{
-                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[4],
+                  color: isDarkMode
+                    ? currentTheme[1]
+                    : isLightMode
+                    ? "#7E7E7E"
+                    : currentTheme[0],
                   "&.Mui-selected": {
                     fontWeight: 600,
-                    color:
-                      currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[4],
+                    color: isDarkMode
+                      ? "#FFFFFF"
+                      : isLightMode
+                      ? "black"
+                      : currentTheme[0],
                   },
                   "&:hover": { fontWeight: 600 },
                 }}
@@ -166,11 +196,18 @@ export default function Home() {
                 label="Work"
                 disableRipple
                 sx={{
-                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[5],
+                  color: isDarkMode
+                    ? currentTheme[1]
+                    : isLightMode
+                    ? "#7E7E7E"
+                    : currentTheme[1],
                   "&.Mui-selected": {
                     fontWeight: 600,
-                    color:
-                      currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[5],
+                    color: isDarkMode
+                      ? "#FFFFFF"
+                      : isLightMode
+                      ? "black"
+                      : currentTheme[1],
                   },
                   "&:hover": { fontWeight: 600 },
                 }}
@@ -179,11 +216,18 @@ export default function Home() {
                 label="Education"
                 disableRipple
                 sx={{
-                  color: currentTheme[0] === "#FFFFFF" ? {} : currentTheme[1],
+                  color: isDarkMode
+                    ? currentTheme[1]
+                    : isLightMode
+                    ? "#7E7E7E"
+                    : currentTheme[2],
                   "&.Mui-selected": {
                     fontWeight: 600,
-                    color:
-                      currentTheme[0] === "#FFFFFF" ? "black" : currentTheme[1],
+                    color: isDarkMode
+                      ? "#FFFFFF"
+                      : isLightMode
+                      ? "black"
+                      : currentTheme[2],
                   },
                   "&:hover": { fontWeight: 600 },
                 }}
@@ -197,12 +241,16 @@ export default function Home() {
               setHoveredProject={setHoveredProject}
               shouldAnimate={shouldAnimateProjects}
               currentTheme={currentTheme}
+              isDarkMode={isDarkMode}
+              isLightMode={isLightMode}
             />
           </TabPanel>
           <TabPanel value={tabValue} index={1}>
             <Work
               shouldAnimate={shouldAnimateProjects}
               currentTheme={currentTheme}
+              isDarkMode={isDarkMode}
+              isLightMode={isLightMode}
             />
           </TabPanel>
           <TabPanel value={tabValue} index={2}>
@@ -211,6 +259,8 @@ export default function Home() {
               currentTheme={currentTheme}
               hoveredProject={hoveredProject}
               setHoveredProject={setHoveredProject}
+              isDarkMode={isDarkMode}
+              isLightMode={isLightMode}
             />
           </TabPanel>
         </Box>

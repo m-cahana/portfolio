@@ -25,7 +25,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 800px;
-  gap: 32px;
+  gap: 16px;
   margin-top: 20px;
   position: relative;
   z-index: 1;
@@ -215,32 +215,6 @@ a.email {
   text-decoration: underline;
 }
 
-.projectImage {
-  position: fixed;
-  right: 80px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 400px;
-  height: 400px;
-  pointer-events: none;
-  z-index: 2000;
-  opacity: 0;
-  animation: fadeIn 0.3s ease forwards;
-  border: 1px solid gray;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-}
-
-.projectImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -287,21 +261,4 @@ a.email {
   to {
     opacity: 1;
   }
-}
-
-/* Tab styles */
-.MuiTab-root {
-  font-size: 24px !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.02em !important;
-  text-transform: none !important;
-  font-family: var(--font-geist-sans) !important;
-  padding: 0 32px 0 0 !important;
-  min-width: auto !important;
-  color: rgba(0, 0, 0, 1) !important;
-  font-style: italic !important;
-}
-
-.MuiTabs-indicator {
-  display: none !important;
 }
