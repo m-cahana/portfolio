@@ -26,9 +26,9 @@
   width: 100%;
   max-width: 800px;
   gap: 16px;
-  margin-top: 20px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .container {
@@ -41,6 +41,8 @@
   gap: 16px;
   margin-bottom: 24px;
   height: 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
@@ -152,12 +154,13 @@ a.secondary {
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
-    padding-bottom: 80px;
+    padding: 16px;
   }
 
   .main {
-    align-items: center;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 0;
   }
 
   .main ol {
@@ -182,6 +185,13 @@ a.secondary {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+
+  .titleContainer {
+    margin-top: 24px; /* Add some space at the top */
+    padding: 0;
+    width: 100%;
+    justify-content: space-between; /* Space out title and theme switcher */
   }
 }
 
