@@ -13,15 +13,25 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Michael Cahana",
-  description: "Michael Cahana's portfolio",
+  description: "Michael Cahana's Portfolio",
   icons: {
     icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+    other: {
+      rel: "apple-touch-icon",
+      url: "/favicon.svg",
+    },
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
