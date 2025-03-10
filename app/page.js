@@ -32,11 +32,7 @@ export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [tabValue, setTabValue] = useState(0);
   const [shouldAnimateProjects, setShouldAnimateProjects] = useState(true);
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    const hour = new Date().getHours();
-    const isDaytime = hour >= 6 && hour < 20;
-    return isDaytime ? themes[0].colors : themes[themes.length - 1].colors;
-  });
+  const [currentTheme, setCurrentTheme] = useState(themes[0].colors);
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
