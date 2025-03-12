@@ -14,7 +14,7 @@ export default function Work({
   const getNextIndex = getColorIndexer(isDarkMode, isLightMode);
   const jobs = [
     {
-      role: "Sabbatical of sorts",
+      role: "Sabbatical",
       organization: "",
       description:
         "Running an afterschool program for preschoolers, working at a restaurant, teaching myself how to make interactive graphics, and building visual projects.",

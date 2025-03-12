@@ -22,7 +22,7 @@ export default function Projects({
         "An interactive investigation into permitting in the West Bank, where Israeli settlements expand freely while Palestinian communities face systematic demolition.",
       path: "/west-bank-demolitions",
       date: "February 2025",
-      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
+      skills: ["d3.js", "JavaScript", "Python"],
       image: "/west_bank_demolitions.jpeg",
     },
     {
@@ -32,7 +32,7 @@ export default function Projects({
         "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
       date: "January 2025",
-      skills: ["d3.js", "JavaScript", "HTML", "CSS", "Python"],
+      skills: ["d3.js", "JavaScript", "Python"],
       image: "/nyc_camera_violations.jpeg",
     },
   ];
