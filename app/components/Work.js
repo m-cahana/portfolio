@@ -81,7 +81,7 @@ export default function Work({
     },
     {
       role: "Research Assistant",
-      organization: "Northwestern University Dept. of Economics",
+      organization: "Northwestern University Department of Economics",
       description:
         "Researched real-time electricity pricing and renewable energy policies in Spain, using large-scale data analysis to determine whether new policies had uneven distributional impacts on Spanish residential households.",
       date: "June 2017 - June 2018",
