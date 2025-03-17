@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Work from "./components/Work";
 import Education from "./components/Education";
 import { themes } from "./components/ThemeSwitcher";
+import { Analytics } from "@vercel/analytics/react";
 
 function TabPanel({ children, value, index }) {
   return (
@@ -264,6 +265,7 @@ export default function Home() {
           </TabPanel>
         </Box>
       </main>
+      <Analytics />
     </div>
   );
 }
