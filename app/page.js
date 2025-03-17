@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import styles from "./page.module.css";
 import { Tabs, Tab, Box } from "@mui/material";
@@ -32,23 +32,7 @@ export default function Home() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [tabValue, setTabValue] = useState(0);
   const [shouldAnimateProjects, setShouldAnimateProjects] = useState(true);
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    // Only run this on the client side
-    if (typeof window !== "undefined") {
-      // Check if the user prefers dark mode
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
-      // Return dark theme if dark mode is preferred, otherwise light theme
-      return prefersDarkMode
-        ? themes[themes.length - 1].colors
-        : themes[0].colors;
-    }
-
-    // Default to light theme during server-side rendering
-    return themes[0].colors;
-  });
+  const [currentTheme, setCurrentTheme] = useState(themes[0].colors);
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -66,29 +50,6 @@ export default function Home() {
 
   const isDarkMode = currentTheme[0] === "#1E1E1E";
   const isLightMode = currentTheme[0] === "#FFFFFF";
-
-  useEffect(() => {
-    // Only run on client side
-    if (typeof window === "undefined") return;
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-    // Handler function to update theme when preference changes
-    const handleChange = (e) => {
-      setCurrentTheme(
-        e.matches ? themes[themes.length - 1].colors : themes[0].colors
-      );
-    };
-
-    // Add event listener
-    mediaQuery.addEventListener("change", handleChange);
-
-    // Force check current state
-    handleChange(mediaQuery);
-
-    // Clean up
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
 
   return (
     <div
