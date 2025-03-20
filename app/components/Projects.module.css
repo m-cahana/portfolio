@@ -130,7 +130,7 @@
 .skillsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px;
   margin-left: 0; /* Remove left margin to align with date */
   margin-top: 8px;
 }
@@ -140,6 +140,11 @@
   color: rgba(0, 0, 0, 0.4);
   padding: 0; /* Remove padding */
   font-family: Helvetica;
+}
+
+.skillTag:not(:last-child)::after {
+  content: "+";
+  margin-left: 4px;
 }
 
 .noUnderline {
