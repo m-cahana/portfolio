@@ -17,6 +17,16 @@ export default function Projects({
 
   const projects = [
     {
+      title:
+        "What's the Trump Administration Trying to Erase Through Its DEI Purge?",
+      description:
+        "A systematic classification of all the websites the Pentagon purged as part of the Trump administration's campaign against DEI content.",
+      path: "/pentagon-dei-purge",
+      date: "March 2025",
+      skills: ["d3.js", "Svelte", "Python"],
+      image: "/pentagon_dei_purge.jpeg",
+    },
+    {
       title: "Deny and Demolish: Israel's Permitting System in the West Bank",
       description:
         "An interactive investigation into permitting in the West Bank, where Israeli settlements expand freely while Palestinian communities face systematic demolition.",

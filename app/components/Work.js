@@ -26,6 +26,7 @@ export default function Work({
         "d3.js",
         "React",
         "Next.js",
+        "Svelte",
         "Python",
       ],
     },
