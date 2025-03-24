@@ -206,6 +206,11 @@ a.email {
   font-style: italic;
 }
 
+/* Add underline effect on hover for all email links */
+a.email:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .projectTitle {
     display: block;
@@ -220,7 +225,6 @@ a.email {
   color: rgba(0, 0, 0, 0.7);
   margin-left: 0; /* Removed margin to align with date */
 }
-
 .projectHeader:hover .projectTitle {
   text-decoration: underline;
 }
