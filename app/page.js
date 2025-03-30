@@ -112,7 +112,7 @@ export default function Home() {
                   : addOpacity(currentTheme[1], backgroundOpacity),
               }}
             >
-              aspiring data journalist
+              data journalist
             </span>
             , and{" "}
             <span
