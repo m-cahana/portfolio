@@ -264,8 +264,8 @@ export default function Home() {
             />
           </TabPanel>
         </Box>
+        <Analytics />
       </main>
-      <Analytics />
     </div>
   );
 }
