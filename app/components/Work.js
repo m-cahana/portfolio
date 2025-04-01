@@ -34,7 +34,7 @@ export default function Work({
       role: "Data Scientist",
       organization: "Quora",
       description:
-        "Managed experimentation and research for multiple monetization workstreams, increasing revenue for the core Quora product, and developing a subscription system for Poe, the company's new chat product.",
+        "Managed experimentation and research for multiple monetization workstreams, increasing revenue for the core Quora product, and developing a subscription system for Poe, the company's new AI chat product.",
       date: "November 2021 - September 2024",
       skills: [
         "Python",
