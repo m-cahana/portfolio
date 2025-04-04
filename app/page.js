@@ -128,8 +128,8 @@ export default function Home() {
               web designer
             </span>
             . I make interactive graphics to tell stories that feel important
-            and overlooked. I&apos;m open to freelance work, and you can reach
-            me at{" "}
+            and overlooked. I&apos;m open to collaborating, and you can reach me
+            at{" "}
             <a
               className={styles.email}
               style={{
