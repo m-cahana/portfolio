@@ -18,6 +18,16 @@ export default function Projects({
   const projects = [
     {
       title:
+        "Drivers Speed Through New York City's School Zones With No Limits",
+      description:
+        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license. Developed in partnership with Streetsblog NYC.",
+      path: "/nyc-camera-violations",
+      date: "April 2025",
+      skills: ["d3.js", "Svelte", "Python"],
+      image: "/nyc_camera_violations_updated.jpeg",
+    },
+    {
+      title:
         "What's the Trump Administration Trying to Erase Through Its DEI Purge?",
       description:
         "A systematic classification of all the websites the Pentagon purged as part of the Trump administration's campaign against DEI content.",
@@ -34,16 +44,6 @@ export default function Projects({
       date: "February 2025",
       skills: ["d3.js", "JavaScript", "Python"],
       image: "/west_bank_demolitions.jpeg",
-    },
-    {
-      title:
-        "Drivers Speed Through New York City's School Zones With No Limits",
-      description:
-        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
-      path: "/nyc-camera-violations",
-      date: "January 2025",
-      skills: ["d3.js", "JavaScript", "Python"],
-      image: "/nyc_camera_violations.jpeg",
     },
   ];
   return (
