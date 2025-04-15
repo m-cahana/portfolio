@@ -24,7 +24,7 @@ export default function Projects({
       path: "/nyc-camera-violations",
       date: "April 2025",
       skills: ["d3.js", "Svelte", "Python"],
-      image: "/nyc_camera_violations_updated.jpeg",
+      image: "/nyc_camera_violations_sky.jpeg",
     },
     {
       title:
