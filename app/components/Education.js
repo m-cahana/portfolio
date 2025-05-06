@@ -19,7 +19,7 @@ export default function Education({
       school: "Northwestern University",
       degree: (
         <>
-          B.A. with Honors in Economics, Minors in Computer Science and
+          B.A. with Honors in Economics; Minors in Computer Science and
           Environmental Policy
         </>
       ),

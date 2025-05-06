@@ -18,7 +18,7 @@ export default function Work({
       organization: "",
       description:
         "Running an afterschool program for preschoolers, working at a restaurant, teaching myself how to make interactive graphics, and building visual projects.",
-      date: "September 2024 - Present",
+      date: "October 2024 - Present",
       skills: [
         "HTML",
         "CSS",

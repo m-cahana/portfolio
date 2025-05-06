@@ -91,7 +91,7 @@ export default function Home() {
             I&apos;m a{" "}
             <span
               style={{
-                fontWeight: 500,
+                fontWeight: 600,
                 color: isDarkMode
                   ? "#F5F5F5"
                   : currentTheme[0] === "#FFFFFF"
@@ -104,7 +104,7 @@ export default function Home() {
             ,{" "}
             <span
               style={{
-                fontWeight: 500,
+                fontWeight: 600,
                 color: isDarkMode
                   ? "#F5F5F5"
                   : currentTheme[0] === "#FFFFFF"
@@ -117,7 +117,7 @@ export default function Home() {
             , and{" "}
             <span
               style={{
-                fontWeight: 500,
+                fontWeight: 600,
                 color: isDarkMode
                   ? "#F5F5F5"
                   : currentTheme[0] === "#FFFFFF"
@@ -133,7 +133,7 @@ export default function Home() {
             <a
               className={styles.email}
               style={{
-                fontWeight: 500,
+                fontWeight: 600,
                 color: isDarkMode
                   ? "#F5F5F5"
                   : currentTheme[0] === "#FFFFFF"

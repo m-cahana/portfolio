@@ -20,9 +20,10 @@ export default function Projects({
       title:
         "Drivers Speed Through New York City's School Zones With No Limits",
       description:
-        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license. Developed in partnership with Streetsblog NYC.",
+        "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
       date: "April 2025",
+      featured: "Streetsblog NYC",
       skills: ["d3.js", "Svelte", "Python"],
       image: "/nyc_camera_violations_sky.jpeg",
     },
@@ -43,7 +44,7 @@ export default function Projects({
       path: "/west-bank-demolitions",
       date: "February 2025",
       skills: ["d3.js", "JavaScript", "Python"],
-      image: "/west_bank_demolitions.jpeg",
+      image: "/west_bank_demolitions_updated.jpeg",
     },
   ];
   return (
@@ -102,6 +103,21 @@ export default function Projects({
               }}
             >
               {project.description}
+              {project.featured && (
+                <span
+                  style={{
+                    fontWeight: 500,
+                    color: isDarkMode
+                      ? "#F5F5F5"
+                      : currentTheme[0] === "#FFFFFF"
+                      ? "black"
+                      : currentTheme[getNextIndex()],
+                  }}
+                >
+                  {" "}
+                  Featured in {project.featured}.
+                </span>
+              )}
             </a>
             <div className={styles.skillsList}>
               {project.skills.map((skill, skillIndex) => (
