@@ -38,6 +38,12 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.projectFeatured {
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .projectTitle {
   font-size: 18px;
   font-weight: 500;

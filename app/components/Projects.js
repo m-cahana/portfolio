@@ -105,17 +105,19 @@ export default function Projects({
               {project.description}
               {project.featured && (
                 <span
-                  style={{
-                    fontWeight: 500,
-                    color: isDarkMode
-                      ? "#F5F5F5"
-                      : currentTheme[0] === "#FFFFFF"
-                      ? "black"
-                      : currentTheme[getNextIndex()],
-                  }}
+                  className={styles.projectFeatured}
+                  style={
+                    isLightMode
+                      ? {}
+                      : {
+                          color: isDarkMode
+                            ? currentTheme[1]
+                            : currentTheme[getNextIndex()],
+                        }
+                  }
                 >
                   {" "}
-                  Featured in {project.featured}.
+                  ~Featured in {project.featured}~
                 </span>
               )}
             </a>
