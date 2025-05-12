@@ -117,7 +117,7 @@ export default function Projects({
                   }
                 >
                   {" "}
-                  ~Featured in {project.featured}~
+                  Featured in {project.featured}
                 </span>
               )}
             </a>

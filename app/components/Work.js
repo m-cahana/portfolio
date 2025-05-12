@@ -17,7 +17,7 @@ export default function Work({
       role: "Sabbatical",
       organization: "",
       description:
-        "Running an afterschool program for preschoolers, working at a restaurant, teaching myself how to make interactive graphics, and building visual projects.",
+        "Teaching at a local preschool, learning how to make interactive graphics, and building visual projects.",
       date: "October 2024 - Present",
       skills: [
         "HTML",
