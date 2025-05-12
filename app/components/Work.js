@@ -52,7 +52,7 @@ export default function Work({
       role: "Research Analyst",
       organization: "University of Chicago Energy & Environment Lab",
       description:
-        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test novel enforcement of air quality standards in California, and built a model to predict emissions leaks at oil and gas wells in Colorado, better targeting the state's inspectors towards emitting wells.",
+        "Partnered with state governments to evaluate environmental policies. Developed a randomized controlled trial to test novel enforcement of air quality standards in California, and built a machine learning model to predict emissions leaks at oil and gas wells in Colorado, better targeting the state's inspectors towards emitting wells.",
       date: "March 2019 - June 2021",
       skills: [
         "R",
