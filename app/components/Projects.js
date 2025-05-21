@@ -17,6 +17,16 @@ export default function Projects({
 
   const projects = [
     {
+      title: "Animated Sketches",
+      description:
+        "A series of animated sketches experimenting with creative coding techniques.",
+      path: "/sketches",
+      date: "May 2025",
+      skills: ["p5.js"],
+      image: "/sketches.mov",
+      isVideo: true,
+    },
+    {
       title:
         "Drivers Speed Through New York City's School Zones With No Limits",
       description:
@@ -137,7 +147,18 @@ export default function Projects({
             {hoveredProject === index && (
               <Portal.Root>
                 <div className={styles.projectImage}>
-                  <img src={project.image} alt={project.title} />
+                  {project.isVideo ? (
+                    <video
+                      src={project.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      alt={project.title}
+                    />
+                  ) : (
+                    <img src={project.image} alt={project.title} />
+                  )}
                 </div>
               </Portal.Root>
             )}
