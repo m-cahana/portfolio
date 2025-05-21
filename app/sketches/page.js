@@ -1,4 +1,4 @@
-export default function PentagonDEIPurge() {
+export default function Sketches() {
   return (
     <iframe
       src="https://m-cahana.github.io/p5_sketches/"
@@ -10,6 +10,9 @@ export default function PentagonDEIPurge() {
         top: 0,
         left: 0,
       }}
+      allow="fullscreen"
+      allowtransparency="true"
+      sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
     />
   );
 }
