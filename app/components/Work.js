@@ -17,13 +17,14 @@ export default function Work({
       role: "Sabbatical",
       organization: "",
       description:
-        "Teaching at a local preschool, learning how to make interactive graphics, and building visual projects.",
+        "Teaching at a local preschool, learning how to make interactive graphics, and building visual projects for freelance clients.",
       date: "October 2024 - Present",
       skills: [
         "HTML",
         "CSS",
         "JavaScript",
         "d3.js",
+        "p5.js",
         "React",
         "Next.js",
         "Svelte",
