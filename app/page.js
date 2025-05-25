@@ -9,6 +9,7 @@ import Work from "./components/Work";
 import Education from "./components/Education";
 import { themes } from "./components/ThemeSwitcher";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function TabPanel({ children, value, index }) {
   return (
@@ -265,6 +266,7 @@ export default function Home() {
           </TabPanel>
         </Box>
         <Analytics />
+        <SpeedInsights />
       </main>
     </div>
   );
