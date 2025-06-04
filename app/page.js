@@ -159,14 +159,13 @@ export default function Home() {
               sx={{
                 "& .MuiTab-root": {
                   fontSize: "24px",
-                  fontWeight: 400,
                   letterSpacing: "-0.02em",
                   textTransform: "none",
-                  fontFamily: "var(--font-geist-sans)",
+                  fontFamily: "var(--font-satoshi), sans-serif",
                   padding: "0 32px 0 0",
                   minWidth: "auto",
                   fontStyle: "italic",
-                  transition: "font-weight 0.2s",
+                  transition: "font-weight 0.2s, color 0.2s",
                 },
                 "& .MuiTabs-indicator": {
                   display: "none",
@@ -180,17 +179,18 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "#7E7E7E"
+                    ? "rgba(0, 0, 0, 0.4)"
                     : currentTheme[0],
+                  fontWeight: 500,
                   "&.Mui-selected": {
-                    fontWeight: 600,
+                    fontWeight: 700,
                     color: isDarkMode
                       ? "#FFFFFF"
                       : isLightMode
                       ? "black"
                       : currentTheme[0],
                   },
-                  "&:hover": { fontWeight: 600 },
+                  "&:hover": { fontWeight: 700 },
                 }}
               />
               <Tab
@@ -200,17 +200,18 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "#7E7E7E"
+                    ? "rgba(0, 0, 0, 0.4)"
                     : currentTheme[1],
+                  fontWeight: 500,
                   "&.Mui-selected": {
-                    fontWeight: 600,
+                    fontWeight: 700,
                     color: isDarkMode
                       ? "#FFFFFF"
                       : isLightMode
                       ? "black"
                       : currentTheme[1],
                   },
-                  "&:hover": { fontWeight: 600 },
+                  "&:hover": { fontWeight: 700 },
                 }}
               />
               <Tab
@@ -220,17 +221,18 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "#7E7E7E"
+                    ? "rgba(0, 0, 0, 0.4)"
                     : currentTheme[2],
+                  fontWeight: 500,
                   "&.Mui-selected": {
-                    fontWeight: 600,
+                    fontWeight: 700,
                     color: isDarkMode
                       ? "#FFFFFF"
                       : isLightMode
                       ? "black"
                       : currentTheme[2],
                   },
-                  "&:hover": { fontWeight: 600 },
+                  "&:hover": { fontWeight: 700 },
                 }}
               />
             </Tabs>

@@ -2,14 +2,7 @@
   text-align: left;
   position: relative;
   z-index: 1;
-}
-
-.projectsTitle {
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  font-style: italic;
+  font-family: var(--font-satoshi), sans-serif;
 }
 
 .projectsList {
@@ -35,21 +28,26 @@
 .projectDate {
   font-style: italic;
   display: inline;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  font-family: var(--font-satoshi), sans-serif;
 }
 
 .projectFeatured {
   font-style: italic;
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .projectTitle {
   font-size: 18px;
   font-weight: 500;
+  font-style: italic;
   display: inline;
   margin-left: 24px;
-  font-style: italic;
+  font-family: var(--font-satoshi), sans-serif;
+  color: rgb(0, 0, 0);
 }
 
 .projectDescription {
@@ -57,6 +55,8 @@
   line-height: 1.6;
   color: black;
   margin-left: 0; /* Removed margin to align with date */
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
 }
 
 .projectHeader:hover .projectTitle {
@@ -144,9 +144,9 @@
 
 .skillTag {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
+  color: #7e7e7e;
   padding: 0; /* Remove padding */
-  font-family: Helvetica;
+  font-family: var(--font-satoshi), sans-serif;
 }
 
 .skillTag:not(:last-child)::after {

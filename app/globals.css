@@ -12,7 +12,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,4 +26,64 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+@font-face {
+  font-family: "Apris Regular";
+  src: url("/Apris Trial/AprisTrial-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Regular Italic";
+  src: url("/Apris Trial/AprisTrial-RegularItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Light";
+  src: url("/Apris Trial/AprisTrial-Light.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Light Italic";
+  src: url("/Apris Trial/AprisTrial-LightItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Medium";
+  src: url("/Apris Trial/AprisTrial-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Medium Italic";
+  src: url("/Apris Trial/AprisTrial-MediumItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Bold";
+  src: url("/Apris Trial/AprisTrial-Bold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Bold Italic";
+  src: url("/Apris Trial/AprisTrial-BoldItalic.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Black";
+  src: url("/Apris Trial/AprisTrial-Black.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris Black Italic";
+  src: url("/Apris Trial/AprisTrial-BlackItalic.otf") format("opentype");
+  font-display: swap;
 }

@@ -28,12 +28,11 @@ export default function Projects({
     },
     {
       title:
-        "Drivers Speed Through New York City's School Zones With No Limits",
+        "Drivers Speed Through New York City's School Zones With No Limits (Featured in Streetsblog NYC)",
       description:
         "An interactive story on dangerous drivers in New York City's school zones, who rack up hundreds of speeding violations without ever losing their license.",
       path: "/nyc-camera-violations",
       date: "April 2025",
-      featured: "Streetsblog NYC",
       skills: ["d3.js", "Svelte", "Python"],
       image: "/nyc_camera_violations_sky.jpeg",
     },

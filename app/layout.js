@@ -1,5 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const satoshi = localFont({
+  src: "../public/fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +39,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${satoshi.variable} ${geistSans.variable} ${geistMono.variable}`}
+      >
         {children}
       </body>
     </html>
