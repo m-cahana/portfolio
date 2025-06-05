@@ -162,7 +162,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                   textTransform: "none",
                   fontFamily: "var(--font-satoshi), sans-serif",
-                  padding: "0 32px 0 0",
+                  padding: "0 20px 0 0",
                   minWidth: "auto",
                   fontStyle: "italic",
                   transition: "font-weight 0.2s, color 0.2s",
