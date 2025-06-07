@@ -26,7 +26,7 @@ export const themes = [
   },
   {
     id: "dark mode",
-    colors: ["#1E1E1E", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5"],
+    colors: ["#000000", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5", "#C5C5C5"],
   },
 ];
 

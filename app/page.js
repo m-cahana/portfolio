@@ -50,7 +50,7 @@ export default function Home() {
 
   const backgroundOpacity = 1;
 
-  const isDarkMode = currentTheme[0] === "#1E1E1E";
+  const isDarkMode = currentTheme[0] === "#000000";
   const isLightMode = currentTheme[0] === "#FFFFFF";
 
   return (
@@ -179,7 +179,7 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "rgba(0, 0, 0, 0.4)"
+                    ? "rgba(0, 0, 0, 0.5)"
                     : currentTheme[0],
                   fontWeight: 500,
                   "&.Mui-selected": {
@@ -200,7 +200,7 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "rgba(0, 0, 0, 0.4)"
+                    ? "rgba(0, 0, 0, 0.5)"
                     : currentTheme[1],
                   fontWeight: 500,
                   "&.Mui-selected": {
@@ -221,7 +221,7 @@ export default function Home() {
                   color: isDarkMode
                     ? currentTheme[1]
                     : isLightMode
-                    ? "rgba(0, 0, 0, 0.4)"
+                    ? "rgba(0, 0, 0, 0.5)"
                     : currentTheme[2],
                   fontWeight: 500,
                   "&.Mui-selected": {
